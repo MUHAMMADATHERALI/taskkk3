@@ -1,61 +1,232 @@
-body{
+/* General Styles */
+body {
     font-family: Arial, Helvetica, sans-serif;
-    margin:0;
+    margin: 0;
+    padding: 0;
 }
-h1,h2{
+
+h1, h2 {
     text-align: center;
 }
-.input-section{
+
+input, select, button {
+    margin: 5px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: navy;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: yellow;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: yellow;
+    color: navy;
+}
+
+/* Input Section */
+.input-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
 }
-.input-section label{
+
+.input-section label {
     font-weight: bold;
     margin-right: 10px;
 }
-.input-section input[type="number"], .input-section input[type="date"]{
+
+.input-section input[type="number"], 
+.input-section input[type="date"] {
     padding: 5px;
     margin-right: 10px;
 }
-.input-section button{
+
+.input-section button {
     padding: 5px 10px;
     background-color: rgb(238, 9, 9);
-    color:white;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
-.expenses-list{
+
+.expenses-list {
     margin: 20px;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
 }
-th,td{
+
+th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-
 }
-th{
+
+th {
     background-color: rgb(215, 222, 38);
     color: rgb(12, 1, 1);
 }
-tfoot td{
+
+tfoot td {
     font-weight: bold;
 }
-.delete-btn{
+
+.delete-btn {
     padding: 5px 10px;
     background-color: rgb(238, 9, 9);
-    color:white;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+.edit-btn {
+    padding: 5px 10px;
+    background-color: rgb(9, 132, 238);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+
+/* Placeholder Sections */
+section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Calendar Styles */
+#calendar-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-controls button {
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-day {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.calendar-day .expenses {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 0.8rem;
+    color: red;
+}
+/* Budget Section Styles */
+.budget-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.budget-input-section label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.budget-input-section input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.budget-input-section button {
+    padding: 8px 15px;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.budget-input-section button:hover {
+    background-color: #0056b3;
+}
+
+.budget-summary {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.budget-summary h3 {
+    text-align: center;
+}
+
+.budget-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.budget-summary ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#total-budget {
+    font-weight: bold;
+    color: green;
 }
 
 

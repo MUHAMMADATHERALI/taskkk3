@@ -4,53 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Money Tracker WebA pp</title>
+    <title>Money Tracker WebApp</title>
 </head>
 <body>
-    <h1> Expense Tracker</h1>
-    <div class="input-section">
-        <label for="category-select">Category:</label>
-        <select id="category-select">
-            <option value="College Fee">College Fee</option>
-            <option value="Rent">Rent</option>
-            <option value="Transport">Transport</option>
-            <option value="Food">Food</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Cool Drinks">Cool Drinks</option>
-        </select>
-        <label for="amount-input">Amount:</label>
-        <input type="number" id="amount-input" placeholder="Ho much you spent">
-        <label for="date-input">Date:</label>
-        <input type="date" id="date-input">
-        <button id="add-btn">Add</button>
-    </div>
-    <div class="expenses-list">
-        <h2>Expenses List</h2>
-        <table>
-            <thead>
-                
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#expense-tracker-section" onclick="showSection('expense-tracker-section')">Add Record</a></li>
+            <li><a href="#set-budget-section" onclick="showSection('set-budget-section')">Set Budget</a></li>
+            <li><a href="#statistics-section" onclick="showSection('statistics-section')">Statistics</a></li>
+            <li><a href="#calendar-section" onclick="showSection('calendar-section')">Calendar</a></li>
+        </ul>
+    </nav>
+
+    <!-- Expense Tracker Section -->
+    <section id="expense-tracker-section">
+        <h1>Expense Tracker</h1>
+        <div class="input-section">
+            <label for="category-select">Category:</label>
+            <select id="category-select">
+                <option value="College Fee">College Fee</option>
+                <option value="Rent">Rent</option>
+                <option value="Transport">Transport</option>
+                <option value="Food">Food</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Cool Drinks">Cool Drinks</option>
+            </select>
+            <label for="amount-input">Amount:</label>
+            <input type="number" id="amount-input" placeholder="How much you spent">
+            <label for="date-input">Date:</label>
+            <input type="date" id="date-input">
+            <button id="add-btn">Add</button>
+        </div>
+        <div class="expenses-list">
+            <h2>Expenses List</h2>
+            <table>
+                <thead>
                     <tr>
                         <th>Category</th>
                         <th>Amount</th>
                         <th>Date</th>
                         <th>Delete</th>
                     </tr>
-                
-            </thead>
-            <tbody id="expense-table-body">
+                </thead>
+                <tbody id="expense-table-body"></tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total:</td>
+                        <td id="total-amount"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
 
-            </tbody>
-            <tfoot>
-                <td>Total:</td>
-                <td id="total-amount"></td>
-                <td></td>
-                <td></td>
-            </tfoot>
-        </table>
-    </div>
+    <!-- Set Budget Section -->
+    <section id="set-budget-section" style="display: none;">
+        <h2>Add Your Budget</h2>
+        <div class="budget-input-section">
+            <label for="health-budget">Health</label>
+            <input type="number" id="health-budget" placeholder="Enter amount for health">
+            <label for="food-budget">Food</label>
+            <input type="number" id="food-budget" placeholder="Enter amount for food">
+            <label for="clothing-budget">Clothing</label>
+            <input type="number" id="clothing-budget" placeholder="Enter amount for clothing">
+            <button id="add-budget-btn">Add</button>
+        </div>
+        <div class="budget-summary">
+            <h3>Budget Summary</h3>
+            <ul id="budget-list">
+                <!-- Budget items will be dynamically added here -->
+            </ul>
+            <p><strong>Total Budget: </strong><span id="total-budget">0</span></p>
+        </div>
+    </section>
 
+    <!-- Statistics Section -->
+    <section id="statistics-section" style="display: none;">
+        <h2>Statistics (Coming Soon)</h2>
+    </section>
 
-    
+    <!-- Calendar Section -->
+    <section id="calendar-section" style="display: none;">
+        <h2>Calendar Page</h2>
+        <div id="calendar-controls">
+            <button id="prev-month">←</button>
+            <span id="current-month"></span>
+            <button id="next-month">→</button>
+        </div>
+        <div id="calendar"></div>
+    </section>
+
     <script src="js/script.js"></script>
 </body>
 </html>
