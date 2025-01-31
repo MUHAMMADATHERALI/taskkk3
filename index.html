@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Money Tracker WebApp</title>
 </head>
 <body>
@@ -82,9 +83,12 @@
     </section>
 
     <!-- Statistics Section -->
-    <section id="statistics-section" style="display: none;">
-        <h2>Statistics (Coming Soon)</h2>
-    </section>
+<section id="statistics-section" style="display: none;">
+    <h2>Statistics</h2>
+    <div class="chart-container">
+        <canvas id="statisticsChart"></canvas>
+    </div>
+</section>
 
     <!-- Calendar Section -->
     <section id="calendar-section" style="display: none;">
@@ -98,5 +102,6 @@
     </section>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
